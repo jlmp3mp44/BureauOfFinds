@@ -1,0 +1,33 @@
+<div th:fragment="header">
+<header data-bs-theme="dark">
+    <nav class="navbar navbar-expand-md " style="background-color: plum">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="p-2 mx-3" href="/">Main page</a>
+            <a class="p-2 mx-3 " href="/add">Add find</a>
+            <a class="p-2 mx-3 " href="/find">All findings</a>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <form action="/search" method="get" style="display: inline">
+                    <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="keywords">
+                    <button class="btn btn-success mx-3" type="submit" style="color: antiquewhite; background-color: blueviolet"; >Search</button>
+                </form>
+                <!DOCTYPE html>
+                <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+                      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+                <head>
+                    <title></title>
+                </head>
+                <body>
+                <form class="mx-3" th:action="@{/logout}" method="post" >
+                    <input type="submit" value="Sign Out"/>
+                </form>
+                <span class="mx-3" style="height: max-content">@<span th:text="${username}"></span></span>
+                </body>
+                </html>
+            </div>
+        </div>
+    </nav>
+</header>
+</div>

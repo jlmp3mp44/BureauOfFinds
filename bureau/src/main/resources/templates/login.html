@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<br>
+<header th:insert="blocks/header :: header"></header>
+<div class="snippet-container mt-5 mb-5"></div>
+<h2>Log in </h2>
+<form th:action="@{/login}" method="post">
+    <input type="text" name="username" placeholder="username" ><br>
+    <input type="text" name="password" placeholder="password" ><br>
+    <input type="hidden" name="_csrf" value="${_csrf.token}">
+    <button type="submit" class="btn btn-success">Log in</button>
+</form>
+<a href="/registration">To registration</a>
+</main>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel = "stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+<style>
+    body {
+        background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREe7o-_Ze8d4Un-yCn7o0QKsZUX1DvMwE8IbuMAnDD8t57y0zfA35mKyHrhlJ7E5m03PU&usqp=CAU');
+    }
+</style>
+<header th:insert="blocks/header :: header"></header>
+<div>
+    <div class="snippet-container mt-5"></div>
+    <h2>All findings</h2>
+    <div th:each="el : ${findings}" class="alert alert-info mt-2">
+    <h3 th:text="${el.title}"/>
+        <p th:text="${el.description}"/>
+        <p the data application/>
+        <p th:text="${el.dateOfCreated}"/>
+        <a th:href="'/find' + ${el.id}" class="btn btn-warning">More information</a>
+    </div>
+</div>
+</main>
+<div th:insert="blocks/footer :: footer"></div>
+</body>
+</html>
